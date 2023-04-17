@@ -1,0 +1,5 @@
+<div class="tab-heading-wrap" *ngIf="tabs">
+  <span *ngFor="let tab of tabs; let i = index;" (click)="this.changeTab(tab,i)" [ngClass]="{'active': tab.active}">{{tab.title}}</span>
+</div>
+
+<ng-content></ng-content>

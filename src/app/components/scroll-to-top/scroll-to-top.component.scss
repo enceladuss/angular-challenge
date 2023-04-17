@@ -1,0 +1,33 @@
+@import '../../../styles';
+
+button {
+  position: fixed;
+  z-index: 2;
+  right: 3%;
+  bottom: 3%;
+  border-radius: 50%;
+  border: none;
+  background-color: $red;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  transition: 0.2s all;
+
+  i {
+    color: $white;
+    visibility: hidden;
+  }
+
+  @include box-shadow();
+
+  &.active {
+    width: 40px;
+    height: 40px;
+    visibility: visible;
+
+    i {
+      visibility: visible;
+    }
+  }
+}

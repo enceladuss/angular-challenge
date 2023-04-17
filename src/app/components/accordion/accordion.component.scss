@@ -1,0 +1,45 @@
+@import '../../../styles';
+
+.accordion-container {
+  @include box-shadow();
+
+  .item {
+    border-bottom: 1px solid rgb(221,221,221);
+    transition: 0.2s all;
+
+    .accordion-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      padding: 10px 20px;
+
+      i {
+        color: $blue;
+        transition: 0.2s all;
+      }
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+
+      .accordion-content-wrap {
+        padding: 10px 20px;
+      }
+    }
+
+    &.is-expanded {
+      .accordion-header {
+        i {
+          transform: rotate(180deg);
+        }
+      }
+
+      .accordion-content {
+        max-height: 5000px;
+        transition: max-height 1s ease-in-out;
+      }
+    }
+  }
+}

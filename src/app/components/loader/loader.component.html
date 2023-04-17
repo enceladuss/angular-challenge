@@ -1,0 +1,10 @@
+<div class="loader-overlay" [ngClass]="{'active': isLoading}">
+  <div class="loader-container">
+    <div class="loader">
+      <ng-container [ngSwitch]="loaderType">
+        <div class="circular" *ngSwitchCase="'Circular'"></div>
+        <h1 *ngSwitchCase="'Loading'">{{loadingText}}</h1>
+      </ng-container>
+    </div>
+  </div>
+</div>

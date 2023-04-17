@@ -1,0 +1,52 @@
+.loader-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255,255,255, .6);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s all;
+  z-index: 99;
+
+  .loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loader {
+      position: absolute;
+      top: 35%;
+
+      h1 {
+        width: 150px;
+      }
+
+      .circular {
+        $border-props: 10px solid;
+        border: $border-props #eee;
+        border-radius: 50%;
+        border-top: $border-props #3498db;
+        width: 100px;
+        height: 100px;
+        animation: spin 0.5s infinite linear;
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+.loader-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}

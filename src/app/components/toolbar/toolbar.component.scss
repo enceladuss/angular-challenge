@@ -1,0 +1,32 @@
+@import '../../../styles';
+
+.toolbar-wrap {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  background-color: $blue;
+  color: $white;
+  padding: 10px;
+
+  @include box-shadow();
+
+  .container {
+    ul {
+      display: grid;
+      grid-gap: 10px;
+      grid-auto-flow: column;
+
+      li {
+        display: inline;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .toolbar-wrap {
+    grid-template-columns: 1fr;
+  }
+}

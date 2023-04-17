@@ -1,0 +1,21 @@
+<div class="credit-card-input-container">
+  <div class="input-container">
+    <label for="ccNum">
+      <ng-container [ngSwitch]="creditCardNumber[0]">
+        <i *ngSwitchCase="'3'" class="fab fa-cc-amex"></i>
+        <i *ngSwitchCase="'4'" class="fab fa-cc-visa"></i>
+        <i *ngSwitchCase="'5'" class="fab fa-cc-mastercard"></i>
+        <i *ngSwitchCase="'6'" class="fab fa-cc-discover"></i>
+        <i *ngSwitchDefault    class="far fa-credit-card"></i>
+      </ng-container>
+    </label>
+
+    <ng-template [ngIf]="!isReadonly">
+      <input id="ccNum" type="tel" [(ngModel)]="creditCardNumber" required [readonly]="isReadonly" maxlength="16" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+    </ng-template>
+
+    <ng-template [ngIf]="isReadonly">
+      <input type="text" [(ngModel)]="creditCardNumber" [readonly]="isReadonly">
+    </ng-template>
+  </div>
+</div>

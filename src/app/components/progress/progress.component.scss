@@ -1,0 +1,38 @@
+@import '../../../styles';
+
+.progress-container {
+  display: grid;
+  align-items: center;
+  position: relative;
+
+  small {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+  }
+
+  progress {
+    width: 100%;
+    height: 40px;
+  }
+
+  progress[value]::-webkit-progress-value {
+    transition: all 3s;
+  }
+
+  progress::-webkit-progress-bar {
+    background-color: $white;
+    border-radius: 7px;
+    transition: all 1s;
+  }
+
+
+  progress::-webkit-progress-value {
+    background-color: blue;
+    border-radius: 7px;
+
+  }
+
+
+}
+

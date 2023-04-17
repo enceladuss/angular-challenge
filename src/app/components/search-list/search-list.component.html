@@ -1,0 +1,4 @@
+<app-debounce-search [searchTerm]="searchTerm" (searchUpdate)="updateSearchTerm($event)"></app-debounce-search>
+<ul class="dropdown-wrap" [ngClass]="{'active': hasBeenSelected}">
+  <li *ngFor="let item of items | appFilterTerm : searchTerm;" (click)="updateSearchTerm(item); hasBeenSelected = false;">{{item}}</li>
+</ul>
