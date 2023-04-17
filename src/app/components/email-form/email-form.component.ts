@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-email-form',
@@ -8,11 +8,11 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class EmailFormComponent {
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: UntypedFormBuilder) {
     this.initializeForm();
   }
 
-  public form: FormGroup;
+  public form: UntypedFormGroup;
 
   private initializeForm(): void {
     this.form = this.formBuilder.group({
